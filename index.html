@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GreenLeaf Nursery - Fresh Plants and Flowers">
+<title>GreenLeaf Nursery | Fresh Plants & Flowers</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* GENERAL CSS */
+:root {
+    --green: #28764b;
+    --dark-green: #174b32;
+    --light-green: #eaf4ed;
+    --cream: #fbfaf5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #26352b;
+    background: white;
+}
+
+h1, h2, h3, .navbar-brand {
+    font-family: 'Playfair Display', serif;
+}
+
+.text-success {
+    color: var(--green) !important;
+}
+
+.bg-success {
+    background-color: var(--green) !important;
+}
+
+.btn-success {
+    background: var(--green);
+    border-color: var(--green);
+    transition: .3s;
+}
+
+.btn-success:hover {
+    background: var(--dark-green);
+    border-color: var(--dark-green);
+    transform: translateY(-2px);
+}
+
+.btn-outline-success {
+    color: var(--green);
+    border-color: var(--green);
+}
+
+.btn-outline-success:hover,
+.btn-outline-success.active {
+    background: var(--green);
+    color: white;
+}
+
+/* TOP TICKER */
+.ticker-wrapper {
+    min-height: 36px;
+    font-size: 14px;
+}
+
+.ticker-content {
+    white-space: nowrap;
+}
+
+.ticker-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker 28s linear infinite;
+}
+
+.ticker-wrapper:hover .ticker-text {
+    animation-play-state: paused;
+}
+
+@keyframes ticker {
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* NAVBAR */
+.navbar {
+    transition: .3s;
+}
+
+.navbar-brand {
+    letter-spacing: -.5px;
+}
+
+.nav-link {
+    transition: .3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--green) !important;
+}
+
+/* HERO SECTION */
+.hero-section {
+    min-height: 590px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(12,39,25,.72),
+            rgba(12,39,25,.18)
+        ),
+        url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=2000&q=85");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-section h1 {
+    max-width: 850px;
+    margin: auto;
+    line-height: 1.12;
+}
+
+.hero-section p {
+    max-width: 650px;
+    margin: auto;
+}
+
+.eyebrow {
+    color: #b9e2c4;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* SECTION HEADINGS */
+.section-kicker {
+    color: var(--green);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.section-title {
+    color: var(--dark-green);
+}
+
+/* FEATURES */
+.feature-section {
+    background: var(--cream);
+}
+
+.feature-icon {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--light-green);
+    color: var(--green);
+    font-size: 24px;
+    margin: 0 auto 14px;
+}
+
+/* PRODUCT CARDS */
+.plant-card {
+    border-radius: 18px;
+    overflow: hidden;
+    transition: .3s ease;
+}
+
+.plant-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(26,65,42,.13) !important;
+}
+
+.img-box {
+    height: 250px;
+    overflow: hidden;
+    background: var(--light-green);
+}
+
+.interactive-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .55s ease;
+}
+
+.plant-card:hover .interactive-img {
+    transform: scale(1.08);
+}
+
+.plant-card .card-body {
+    padding: 22px;
+}
+
+.plant-card .card-title {
+    color: var(--dark-green);
+}
+
+.filter-btn {
+    border-radius: 30px !important;
+    margin: 4px;
+}
+
+/* PLANT CARE */
+.care-card {
+    border: 1px solid #e7eee8;
+    border-radius: 16px;
+    padding: 26px;
+    height: 100%;
+    transition: .3s;
+    background: white;
+}
+
+.care-card:hover {
+    border-color: #b7d6c0;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(26,65,42,.06);
+}
+
+/* ABOUT */
+.about-photo {
+    min-height: 390px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* CONTACT */
+.contact-section {
+    background: linear-gradient(135deg,#edf6ef,#fbfaf5);
+}
+
+.form-control {
+    padding: 13px;
+    border-radius: 10px;
+}
+
+.form-control:focus {
+    border-color: #78ad89;
+    box-shadow: 0 0 0 .2rem rgba(40,118,75,.12);
+}
+
+/* FOOTER */
+footer {
+    background: #173d2a;
+    color: #e6f0e8;
+}
+
+footer a {
+    color: #e6f0e8;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #b9e2c4;
+}
+
+.social-link {
+    display: inline-grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    margin-right: 7px;
+    transition: .3s;
+}
+
+.social-link:hover {
+    background: var(--green);
+    border-color: var(--green);
+    color: white;
+}
+
+/* CART */
+.cart-list {
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.empty-cart {
+    color: #718077;
+}
+
+/* ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: .65s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* BACK TO TOP */
+#back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: none;
+    place-items: center;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width:767px) {
+    .hero-section {
+        min-height: 490px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.65rem;
+    }
+
+    .img-box {
+        height: 230px;
+    }
+
+    .ticker-wrapper {
+        font-size: 12px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div id="top-ticker" class="ticker-wrapper bg-success text-white py-1 px-3 d-flex align-items-center">
+    <div class="ticker-content flex-grow-1 overflow-hidden">
+        <div class="ticker-text">
+            🌿 Welcome to GreenLeaf Nursery!
+            &nbsp; | &nbsp;
+            🌸 Fresh Indoor & Outdoor Plants Available
+            &nbsp; | &nbsp;
+            🚚 Free Home Delivery on Orders Above Rs. 2,000!
+            &nbsp; | &nbsp;
+            🌱 Bring Nature Closer to Your Home!
+        </div>
+    </div>
+    <button type="button" class="btn btn-sm text-white border-0 ms-2" onclick="toggleTicker()" aria-label="Close announcement">
+        <i class="bi bi-x-lg"></i>
+    </button>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-success fs-3" href="#home">
+            <i class="bi bi-tree-fill me-2"></i>
+            GreenLeaf
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto fw-semibold gap-lg-2">
+                <li class="nav-item">
+                    <a class="nav-link active text-success" href="#home">
+                        <i class="bi bi-house-door me-1"></i>
+                        Home
+                    </a>
+                </li>
+                <!-- OPENS PLANTS IN NEW TAB -->
+                <li class="nav-item">
+                    <a class="nav-link" href="plants.html" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-flower2 me-1"></i>
+                        Plants
+                    </a>
+                </li>
+                <!-- OPENS CARE IN NEW TAB -->
+                <li class="nav-item">
+                    <a class="nav-link" href="care.html" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-droplet me-1"></i>
+                        Care
+                    </a>
+                </li>
+                <!-- OPENS ABOUT IN NEW TAB -->
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-info-circle me-1"></i>
+                        About
+                    </a>
+                </li>
+                <!-- OPENS CONTACT IN NEW TAB -->
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-envelope me-1"></i>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+
+            <button type="button" class="btn btn-success ms-lg-3 rounded-pill px-3 mt-3 mt-lg-0" onclick="showCart()">
+                <i class="bi bi-bag-heart me-1"></i>
+                Cart (<span id="cart-count">0</span>)
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- 1. HERO SECTION -->
+<section id="home" class="hero-section d-flex align-items-center text-white text-center">
+    <div class="container py-5">
+        <div class="eyebrow mb-3">
+            A Little More Green, Every Day
+        </div>
+        <h1 class="display-3 fw-bold mb-3">
+            Fresh Plants & Blooming Flowers
+        </h1>
+        <p class="lead mb-4">
+            Apne ghar aur baghiche ko taza phoolon aur haryali se sajayein.
+        </p>
+        <a href="plants.html" target="_blank" rel="noopener noreferrer" class="btn btn-light btn-lg text-success fw-bold rounded-pill px-5 shadow">
+            Explore Collection
+            <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+    </div>
+</section>
+
+<!-- 2. FEATURES SECTION -->
+<section class="feature-section py-4">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-6 col-lg-3">
+                <div class="feature-icon">
+                    <i class="bi bi-truck"></i>
+                </div>
+                <h6 class="fw-bold">Home Delivery</h6>
+                <small class="text-muted">Carefully packed plants</small>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="feature-icon">
+                    <i class="bi bi-flower1"></i>
+                </div>
+                <h6 class="fw-bold">Fresh Collection</h6>
+                <small class="text-muted">Lovely plants & flowers</small>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="feature-icon">
+                    <i class="bi bi-heart"></i>
+                </div>
+                <h6 class="fw-bold">Grown with Care</h6>
+                <small class="text-muted">A greener home starts here</small>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="feature-icon">
+                    <i class="bi bi-headset"></i>
+                </div>
+                <h6 class="fw-bold">Friendly Support</h6>
+                <small class="text-muted">Here to help you grow</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. PLANTS COLLECTION SECTION -->
+<section id="plants" class="py-5">
+    <div class="container py-lg-3">
+        <div class="text-center mb-4">
+            <div class="section-kicker mb-2">
+                Our Collection
+            </div>
+            <h2 class="fw-bold section-title">
+                Our Fresh Plants & Flowers
+            </h2>
+            <p class="text-muted">
+                Tasveer par mouse le kar jayein aur khoobsurat effect dekhein.
+            </p>
+
+            <!-- FILTER BUTTONS -->
+            <div class="d-flex flex-wrap justify-content-center mt-3">
+                <button type="button" class="btn btn-success filter-btn active" onclick="filterPlants('all', this)">
+                    All
+                </button>
+                <button type="button" class="btn btn-outline-success filter-btn" onclick="filterPlants('indoor', this)">
+                    Indoor Plants
+                </button>
+                <button type="button" class="btn btn-outline-success filter-btn" onclick="filterPlants('outdoor', this)">
+                    Outdoor Plants
+                </button>
+                <button type="button" class="btn btn-outline-success filter-btn" onclick="filterPlants('flower', this)">
+                    Flowers
+                </button>
+            </div>
+        </div>
+
+        <div class="row g-4" id="plant-list">
+            <!-- PLANT 1 -->
+            <div class="col-md-6 col-lg-4 plant-item reveal" data-category="indoor">
+                <div class="card h-100 border-0 shadow-sm plant-card">
+                    <div class="img-box">
+                        <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=900&q=80"
+                             class="interactive-img" alt="Monstera Plant">
+                    </div>
+                    <div class="card-body text-center d-flex flex-column">
+                        <div>
+                            <span class="badge bg-success-subtle text-success mb-2">Indoor Plant</span>
+                            <h5 class="card-title fw-bold">Monstera Deliciosa</h5>
+                            <p class="text-muted small">
+                                Yeh aik khoobsurat indoor pauda hai jo ghar ko fresh aur modern look deta hai.
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <h6 class="fw-bold text-success mb-3">Rs. 1,500</h6>
+                            <button type="button" class="btn btn-outline-success w-100 rounded-pill"
+                                    onclick="addToCart('Monstera Deliciosa', 1500)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PLANT 2 -->
+            <div class="col-md-6 col-lg-4 plant-item reveal" data-category="flower">
+                <div class="card h-100 border-0 shadow-sm plant-card">
+                    <div class="img-box">
+                        <img src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=900&q=80"
+                             class="interactive-img" alt="Red Rose">
+                    </div>
+                    <div class="card-body text-center d-flex flex-column">
+                        <div>
+                            <span class="badge bg-danger-subtle text-danger mb-2">Fresh Flower</span>
+                            <h5 class="card-title fw-bold">English Red Rose</h5>
+                            <p class="text-muted small">
+                                Khushboodar aur taza surkh gulab jo balcony aur garden ki khubsurti barha dein.
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <h6 class="fw-bold text-success mb-3">Rs. 700</h6>
+                            <button type="button" class="btn btn-outline-success w-100 rounded-pill"
+                                    onclick="addToCart('English Red Rose', 700)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PLANT 3 -->
+            <div class="col-md-6 col-lg-4 plant-item reveal" data-category="indoor">
+                <div class="card h-100 border-0 shadow-sm plant-card">
+                    <div class="img-box">
+                        <img src="https://images.pexels.com/photos/2123482/pexels-photo-2123482.jpeg?auto=compress&cs=tinysrgb&w=900"
+                             class="interactive-img" alt="Snake Plant">
+                    </div>
+                    <div class="card-body text-center d-flex flex-column">
+                        <div>
+                            <span class="badge bg-success-subtle text-success mb-2">Indoor Plant</span>
+                            <h5 class="card-title fw-bold">Snake Plant</h5>
+                            <p class="text-muted small">
+                                Kam dekh bhaal mein bhi achha rehne wala stylish pauda, beginners ke liye behtareen.
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <h6 class="fw-bold text-success mb-3">Rs. 950</h6>
+                            <button type="button" class="btn btn-outline-success w-100 rounded-pill"
+                                    onclick="addToCart('Snake Plant', 950)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PLANT 4 -->
+            <div class="col-md-6 col-lg-4 plant-item reveal" data-category="flower">
+                <div class="card h-100 border-0 shadow-sm plant-card">
+                    <div class="img-box">
+                        <img src="https://images.pexels.com/photos/1366630/pexels-photo-1366630.jpeg?auto=compress&cs=tinysrgb&w=900"
+                             class="interactive-img" alt="Bright Sunflower">
+                    </div>
+                    <div class="card-body text-center d-flex flex-column">
+                        <div>
+                            <span class="badge bg-danger-subtle text-danger mb-2">Fresh Flower</span>
+                            <h5 class="card-title fw-bold">Bright Sunflower</h5>
+                            <p class="text-muted small">
+                                Chamakdar peele phool jo aap ke lawn aur garden ko khushgawar bana dein.
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <h6 class="fw-bold text-success mb-3">Rs. 550</h6>
+                            <button type="button" class="btn btn-outline-success w-100 rounded-pill"
+                                    onclick="addToCart('Bright Sunflower', 550)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PLANT 5 -->
+            <div class="col-md-6 col-lg-4 plant-item reveal" data-category="outdoor">
+                <div class="card h-100 border-0 shadow-sm plant-card">
+                    <div class="img-box">
+                        <img src="https://images.unsplash.com/photo-1509423350716-97f9360b4e09?auto=format&fit=crop&w=900&q=80"
+                             class="interactive-img" alt="Aloe Vera">
+                    </div>
+                    <div class="card-body text-center d-flex flex-column">
+                        <div>
+                            <span class="badge bg-primary-subtle text-primary mb-2">Outdoor Plant</span>
+                            <h5 class="card-title fw-bold">Aloe Vera</h5>
+                            <p class="text-muted small">
+                                Asaan dekh bhaal wala succulent pauda jo roshan jagah aur limited paani pasand karta hai.
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <h6 class="fw-bold text-success mb-3">Rs. 600</h6>
+                            <button type="button" class="btn btn-outline-success w-100 rounded-pill"
+                                    onclick="addToCart('Aloe Vera', 600)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PLANT 6 -->
+            <div class="col-md-6 col-lg-4 plant-item reveal" data-category="outdoor">
+                <div class="card h-100 border-0 shadow-sm plant-card">
+                    <div class="img-box">
+                        <img src="https://images.unsplash.com/photo-1512428813834-c702c7702b78?auto=format&fit=crop&w=900&q=80"
+                             class="interactive-img" alt="Areca Palm">
+                    </div>
+                    <div class="card-body text-center d-flex flex-column">
+                        <div>
+                            <span class="badge bg-primary-subtle text-primary mb-2">Outdoor Plant</span>
+                            <h5 class="card-title fw-bold">Areca Palm</h5>
+                            <p class="text-muted small">
+                                Hawa ko saaf rakhne wala lush green palm jo patio aur veranda ki shaan barhata hai.
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <h6 class="fw-bold text-success mb-3">Rs. 1,250</h6>
+                            <button type="button" class="btn btn-outline-success w-100 rounded-pill"
+                                    onclick="addToCart('Areca Palm', 1250)">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. PLANT CARE SECTION -->
+<section id="care" class="py-5" style="background: var(--cream);">
+    <div class="container py-lg-3">
+        <div class="text-center mb-5 reveal">
+            <div class="section-kicker mb-2">Plant Care Tips</div>
+            <h2 class="fw-bold section-title">Paudon Ki Dekh Bhaal Kaise Karein?</h2>
+            <p class="text-muted">Chhoti si tawajjo se aap ke paude hamesha sehatmand aur hare bhare rahenge.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4 reveal">
+                <div class="care-card text-center">
+                    <div class="feature-icon">
+                        <i class="bi bi-droplet-fill"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Sahi Miqdar Mein Paani</h5>
+                    <p class="text-muted small mb-0">
+                        Paani dene se pehle mitti ko ungli se check karein. Jab upar ki mitti khushk mehsoos ho tabhi paani dein.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4 reveal">
+                <div class="care-card text-center">
+                    <div class="feature-icon">
+                        <i class="bi bi-sun-fill"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Munasib Dhoop Aur Roshni</h5>
+                    <p class="text-muted small mb-0">
+                        Indoor paudon ko tez dhoop ke bajaye roshan khidki ke paas rakhein, jabke phoolon wale paudon ko subah ki dhoop dein.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4 reveal">
+                <div class="care-card text-center">
+                    <div class="feature-icon">
+                        <i class="bi bi-flower3"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Khaad Aur Safai</h5>
+                    <p class="text-muted small mb-0">
+                        Mahine mein aik baar organic khaad dalein aur peele patton ko kaat dein taake naye patte tezi se ug sakein.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. ABOUT SECTION -->
+<section id="about" class="py-5">
+    <div class="container py-lg-3">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 reveal">
+                <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1000&q=80"
+                     alt="GreenLeaf Nursery Garden" class="about-photo shadow">
+            </div>
+            <div class="col-lg-6 reveal">
+                <div class="section-kicker mb-2">About GreenLeaf</div>
+                <h2 class="fw-bold section-title mb-3">Har Ghar Mein Haryali Ka Khwab</h2>
+                <p class="text-muted mb-3">
+                    GreenLeaf Nursery mein hum samajhte hain ke paude sirf sajawat nahi balkeh sukoon aur taza hawa ka zariya hain. Humare maahir maali har paude ko qudrati tareeqay se tayyar karte hain.
+                </p>
+                <p class="text-muted mb-4">
+                    Chahe aap ke paas bada lawn ho ya aik chhoti si balcony, hum aap ko behtareen indoor plants, seasonal flowers aur mukammal gardening guidance faraham karte hain.
+                </p>
+                <div class="row g-3 mb-4">
+                    <div class="col-6">
+                        <h4 class="fw-bold text-success mb-0">500+</h4>
+                        <small class="text-muted">Plant Varieties</small>
+                    </div>
+                    <div class="col-6">
+                        <h4 class="fw-bold text-success mb-0">3,000+</h4>
+                        <small class="text-muted">Happy Customers</small>
+                    </div>
+                </div>
+                <a href="about.html" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill px-4">
+                    Learn More About Us
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. CONTACT SECTION -->
+<section id="contact" class="contact-section py-5">
+    <div class="container py-lg-3">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 reveal">
+                <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5">
+                    <div class="text-center mb-4">
+                        <div class="section-kicker mb-2">Get In Touch</div>
+                        <h2 class="fw-bold section-title">Koi Sawal Ya Order?</h2>
+                        <p class="text-muted small">Humein message bhejein, humari team jald aap se rabta karegi.</p>
+                    </div>
+
+                    <form id="contact-form" onsubmit="submitContact(event)">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold small">Aap Ka Naam</label>
+                                <input type="text" class="form-control" id="user-name" placeholder="Ali Khan" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold small">Phone / Email</label>
+                                <input type="text" class="form-control" id="user-contact" placeholder="0300-1234567" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-semibold small">Message</label>
+                                <textarea class="form-control" id="user-message" rows="4" placeholder="Apne pasandeeda paudon ke baare mein likhein..." required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-success w-100 rounded-pill py-2 fw-bold">
+                                    <i class="bi bi-send me-1"></i> Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="contact-alert" class="alert alert-success mt-3 mb-0 d-none" role="alert">
+                        Shukriya! Aap ka message mosool ho gaya hai. Hum jald rabta karein ge.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 7. FOOTER SECTION -->
+<footer class="pt-5 pb-4">
+    <div class="container">
+        <div class="row g-4 pb-4 border-bottom border-secondary border-opacity-25">
+            <div class="col-lg-4">
+                <h4 class="fw-bold text-white mb-3">
+                    <i class="bi bi-tree-fill me-2"></i>GreenLeaf
+                </h4>
+                <p class="small opacity-75">
+                    Taza indoor aur outdoor paudon ka bharosa mand markaz. Apne ird gird haryali phailayein.
+                </p>
+                <div class="mt-3">
+                    <a href="#home" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#home" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#home" class="social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-4">
+                <h6 class="fw-bold text-white mb-3">Quick Links</h6>
+                <ul class="list-unstyled small">
+                    <li class="mb-2"><a href="#home">Home</a></li>
+                    <li class="mb-2"><a href="plants.html" target="_blank" rel="noopener noreferrer">Plants Collection</a></li>
+                    <li class="mb-2"><a href="care.html" target="_blank" rel="noopener noreferrer">Plant Care</a></li>
+                    <li class="mb-2"><a href="about.html" target="_blank" rel="noopener noreferrer">About Us</a></li>
+                    <li class="mb-2"><a href="contact.html" target="_blank" rel="noopener noreferrer">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-lg-4">
+                <h6 class="fw-bold text-white mb-3">Nursery Info</h6>
+                <ul class="list-unstyled small opacity-75">
+                    <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Main Boulevard, Garden Town</li>
+                    <li class="mb-2"><i class="bi bi-telephone me-2"></i>+92 300 1234567</li>
+                    <li class="mb-2"><i class="bi bi-clock me-2"></i>Mon - Sun: 8:00 AM - 8:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center pt-3 small opacity-75">
+            &copy; 2026 GreenLeaf Nursery. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- CART MODAL -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4 border-0 shadow">
+            <div class="modal-header border-bottom-0">
+                <h5 class="modal-title fw-bold section-title" id="cartModalLabel">
+                    <i class="bi bi-bag-heart text-success me-2"></i>Your Plant Cart
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items" class="cart-list">
+                    <p class="text-center empty-cart my-4">Aap ka cart abhi khali hai.</p>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center fw-bold fs-5">
+                    <span>Total:</span>
+                    <span class="text-success">Rs. <span id="cart-total">0</span></span>
+                </div>
+            </div>
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-secondary rounded-pill" onclick="clearCart()">Clear Cart</button>
+                <button type="button" class="btn btn-success rounded-pill px-4" onclick="checkoutOrder()">Place Order</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TOAST NOTIFICATION -->
+<div class="toast-container position-fixed bottom-0 start-0 p-3" style="z-index: 1100;">
+    <div id="cartToast" class="toast align-items-center text-bg-success border-0 rounded-3" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body" id="toast-message">
+                Item added to cart!
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
+<!-- BACK TO TOP BUTTON -->
+<button type="button" id="back-to-top" class="btn btn-success shadow" onclick="scrollToTop()" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// 1. TOP TICKER CLOSE
+function toggleTicker() {
+    const ticker = document.getElementById('top-ticker');
+    if (ticker) {
+        ticker.classList.add('d-none');
+    }
+}
+
+// 2. FILTER PLANTS BY CATEGORY
+function filterPlants(category, btn) {
+    document.querySelectorAll('.filter-btn').forEach(button => {
+        button.classList.remove('btn-success', 'active');
+        button.classList.add('btn-outline-success');
+    });
+    btn.classList.remove('btn-outline-success');
+    btn.classList.add('btn-success', 'active');
+
+    const items = document.querySelectorAll('.plant-item');
+    items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// 3. SHOPPING CART LOGIC
+let cart = [];
+
+function addToCart(name, price) {
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+        existingItem.qty += 1;
+    } else {
+        cart.push({ name: name, price: price, qty: 1 });
+    }
+    updateCartUI();
+    showToast(`${name} cart mein shamil kar diya gaya!`);
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCartUI();
+}
+
+function clearCart() {
+    cart = [];
+    updateCartUI();
+}
+
+function updateCartUI() {
+    const countEl = document.getElementById('cart-count');
+    const itemsContainer = document.getElementById('cart-items');
+    const totalEl = document.getElementById('cart-total');
+
+    const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+    countEl.textContent = totalCount;
+
+    if (cart.length === 0) {
+        itemsContainer.innerHTML = '<p class="text-center empty-cart my-4">Aap ka cart abhi khali hai.</p>';
+        totalEl.textContent = '0';
+        return;
+    }
+
+    let html = '';
+    let totalPrice = 0;
+
+    cart.forEach((item, index) => {
+        const itemTotal = item.price * item.qty;
+        totalPrice += itemTotal;
+        html += `
+            <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+                <div>
+                    <h6 class="mb-0 fw-bold">${item.name}</h6>
+                    <small class="text-muted">Rs. ${item.price.toLocaleString()} x ${item.qty}</small>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="fw-bold text-success">Rs. ${itemTotal.toLocaleString()}</span>
+                    <button type="button" class="btn btn-sm btn-outline-danger rounded-circle" onclick="removeFromCart(${index})" title="Remove">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+    });
+
+    itemsContainer.innerHTML = html;
+    totalEl.textContent = totalPrice.toLocaleString();
+}
+
+function showCart() {
+    const cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
+    cartModal.show();
+}
+
+function checkoutOrder() {
+    if (cart.length === 0) {
+        alert('Pehle cart mein koi pauda shamil karein!');
+        return;
+    }
+    alert('Mubarak ho! Aap ka order kamyabi se place ho gaya hai.');
+    clearCart();
+    const modalEl = document.getElementById('cartModal');
+    const modalInstance = bootstrap.Modal.getInstance(modalEl);
+    if (modalInstance) modalInstance.hide();
+}
+
+function showToast(message) {
+    document.getElementById('toast-message').textContent = message;
+    const toastEl = document.getElementById('cartToast');
+    const toast = new bootstrap.Toast(toastEl, { delay: 2000 });
+    toast.show();
+}
+
+// 4. CONTACT FORM SUBMISSION
+function submitContact(event) {
+    event.preventDefault();
+    const alertBox = document.getElementById('contact-alert');
+    alertBox.classList.remove('d-none');
+    document.getElementById('contact-form').reset();
+    setTimeout(() => {
+        alertBox.classList.add('d-none');
+    }, 4000);
+}
+
+// 5. SCROLL REVEAL ANIMATION & BACK TO TOP BUTTON
+document.addEventListener('DOMContentLoaded', () => {
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.style.display = 'grid';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+});
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
